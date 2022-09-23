@@ -48,8 +48,8 @@ if(empty($_SESSION["ttnql"])){
             </div>
             <p class="text-info text-center">
                 <?php 
-                    if(isset($data["ttnql"])){
-                         echo $data["ttnql"]["FULL_NAME"];
+                    if(isset($_SESSION["ttql"])){
+                        echo $_SESSION["ttql"]["FULL_NAME"];
                     }
                 ?>
             </p>

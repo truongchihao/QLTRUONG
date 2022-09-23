@@ -44,8 +44,8 @@ if(empty($_SESSION["ttgv"])){
             </div>
             <p class="text-info text-center">
                     <?php 
-                        if(isset($data["ttgv"])){
-                            echo $data["ttgv"]["FULL_NAME"];
+                        if(isset($_SESSION["ttgv"])){
+                            echo $_SESSION["ttgv"]["FULL_NAME"];
                         }
                     ?>
             </p>
