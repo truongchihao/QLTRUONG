@@ -1,10 +1,10 @@
 <?php
 session_start();
 if(isset($data["tths"])){
-    $_SESSION["ten_hs"] = $data["tths"]["FULL_NAME"];
+    $_SESSION["tths"] = $data["tths"];
 }
 
-if(empty($_SESSION["ten_hs"])){
+if(empty($_SESSION["tths"])){
     header('Location: http://localhost/quanly/Home/Login');
 }
 ?>
@@ -26,7 +26,7 @@ if(empty($_SESSION["ten_hs"])){
 
 <nav class="nav">
 	<ul>
-		<li><a href="http://localhost/quanly/NQL/Home">Home</a></li>
+		<li><a href="http://localhost/quanly/HS/Home">Home</a></li>
 		<li><a href="#">Tải tài liệu</a></li>
 		<li><a href="http://localhost/quanly/Home/Login">Đăng xuất</a></li>
 	</ul>
@@ -71,6 +71,11 @@ if(empty($_SESSION["ten_hs"])){
             <div class="box py-3 generalbox sitetopic">
                 <h2 class="sectionname text-warning">Giới thiệu chung</h2>
             <div class="no-overflow">Chào mừng đã đến với kênh hỗ trợ các chức năng của học sinh.<br><p><br></p>
+        </div>
+        <div class="row">
+            <?php
+                 require_once "./mvc/views/pages/".$data["Page"].".php"
+             ?>         
         </div>
 		</div>
 	</section>

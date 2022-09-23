@@ -1,17 +1,17 @@
 <?php
 session_start();
 if(isset($data["ttgv"])){
-    $_SESSION["ten_gv"] = $data["ttgv"]["FULL_NAME"];
+    $_SESSION["ttgv"] = $data["ttgv"];
 }
 
-if(empty($_SESSION["ten_gv"])){
+if(empty($_SESSION["ttgv"])){
     header('Location: http://localhost/quanly/Home/Login');
 }
 ?>
 <html lang="en" class=" -webkit-">
 <head>
   <meta charset="UTF-8">
-  <title>Học sinh</title>
+  <title>Giáo viên</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="/quanly/public/css/GD.css">
@@ -26,7 +26,7 @@ if(empty($_SESSION["ten_gv"])){
 
 <nav class="nav">
 	<ul>
-		<li><a href="http://localhost/quanly/NQL/Home">Home</a></li>
+		<li><a href="http://localhost/quanly/GV/Home">Home</a></li>
 		<li><a href="#">Xem lớp được phân công</a></li>
 		<li><a href="http://localhost/quanly/Home/Login">Đăng xuất</a></li>
 	</ul>
@@ -75,6 +75,11 @@ if(empty($_SESSION["ten_gv"])){
             <div class="box py-3 generalbox sitetopic">
                 <h2 class="sectionname text-warning">Giới thiệu chung</h2>
             <div class="no-overflow">Chào mừng đã đến với kênh hỗ trợ các chức năng của giáo viên.<br><p><br></p>
+        </div>
+        <div class="row">
+            <?php
+                 require_once "./mvc/views/pages/".$data["Page"].".php"
+             ?>         
         </div>
 		</div>
 	</section>
