@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="/css/GD.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 bg-secondary">
+              <div class="row">
+                <div class="col-sm-6">
+                  <img class="rounded-circle m-5" width="150" height="150" src="/img/a.jpg" alt="null">
+                </div>
+                <div class="col-sm-6">
+                  <p class="m-5 text-info">Trương Chí Hào</p>
+                </div>
+              </div>
+              <div class="row">
+                <p class="text-info m-5">Chức vụ: Người quản lý trường</p>
+              </div>
+              <div class="row" id="vertical-menu">
+                <a href="#" class="active h4 ">Chức năng</a>
+                <a href="#">Phân quyền giáo viên, học sinh</a>
+                <a href="#">Quản lý danh sách lớp</a>
+                <a href="#">Quản lý danh sách giáo viên</a>
+                <a href="#">Phân công giáo viên</a>
+                <a href="#">Thống kê</a>
+                <a href="#">Đăng xuất</a>
+              </div>
+              <div class="row">
+              </div>
+            </div>
+          <div class="col-sm-9 bg-primary">
+            <div class="row bg-light">
+              <div class="col-sm-4">
+                <img class="img-thumbnail m-5" width="200" height="150" src="/img/iuh.png" alt="null">
+              </div>
+              <div class="col-sm-8">
+                <h1 class="m-5">Hệ thống nhóm 11</h1>
+
+              </div>
+            </div>
+            <div class="row bg-info">
+              <h2 class="m-5">Lịch sử cấp quyền</h2>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>STT</th>
+                      <th>Loại tài khoản</th>
+                      <th>Mã bắt đầu</th>
+                      <th>Số lượng</th>
+                      <th>Mật khẩu</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Anna</td>
+                      <td>Pitt</td>
+                      <td>35</td>
+                      <td>New York</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="row">
+                  <div class="col-sm-5">
+
+                  </div>
+                  <div class="col-sm-7">      
+                    <button type="button" class="btn btn-success btn-lg m-5" data-bs-toggle="modal" data-bs-target="#myModal">
+                      Cấp quyền tài khoản
+                    </button>
+                  </div>
+                  
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Thông tin cấp quyền</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <div class="container">
+                            <h2>Form cấp quyền</h2>
+                            <form class="form-horizontal" action="/action_page.php">
+                              <div class="form-group"  id="formDemo" name="formDemo"> 
+                                <p>Loại tài khoản:</p>       
+                                <div class="radio">
+                                  <label class="radio-inline"><input type="radio" name="optradio" checked> HS+MSHS</label>
+                                  <label class="radio-inline"><input type="radio" name="optradio"> GV+MSGV</label>
+                                  <!DOCTYPE html>
+                                  <html>
+                                  <head>
+                                      <link rel="stylesheet" href="/css/bootstrap.min.css">
+                                      <script src="/js/bootstrap.bundle.min.js"></script>
+                                      <script type="text/javascript" src="/js/jquery.min.js"></script>
+                                      <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+                                      <link rel="stylesheet" href="/css/GD.css">
+                                  </head>
+                                  <body>
+                                      <div class="container-fluid p-0">
+                                          <div class="row ">
+                                              <div class="col-sm-2 bg-secondary">
+                                                  <div class="row">
+                                                      <div class="col-sm-5 p-0">
+                                                          <img class="rounded-circle m-4" width="100" height="100" src="/img/a.jpg" alt="null">
+                                                      </div>
+                                                      <div class="col-sm-7 p-0">
+                                                          <p class="text-info m-4 text-center mt-5">Trương Chí Hào</p>
+                                                      </div>               
+                                                  </div>
+                                                  <div class="container-fluid">
+                                                      <p class="text-info">Chức vụ: Người quản lý trường</p>
+                                                  </div>
+                                              </div>
+                                              <div class="col-sm-10 bg-light border-bottom">
+                                                  <div class="row bg-light">
+                                                      <div class="col-sm-4">
+                                                          <img class="img-thumbnail mt-5" width="200" height="150" src="/img/iuh.png" alt="null">
+                                                      </div>
+                                                      <div class="col-sm-8">
+                                                          <h1 class="mt-5">Hệ thống nhóm 11</h1>
+                                                      </div>
+                                                   </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-sm-2 bg-secondary">
+                                                  <div class="row mt-5" id="vertical-menu">
+                                                      <a href="#" class="active h4 mb-0">Chức năng</a>
+                                                      <a href="#">Phân quyền giáo viên, học sinh</a>
+                                                      <a href="#">Quản lý danh sách lớp</a>
+                                                      <a href="#">Quản lý danh sách giáo viên</a>
+                                                      <a href="#">Phân công giáo viên</a>
+                                                      <a href="#">Thống kê</a>
+                                                      <a href="#">Đăng xuất</a>
+                                                  </div>
+                                              </div>
+                                                  <div class="col-sm-10 bg-light">
+                                                      <div class="row mt-5 h-200">
+                                                          <div class="box py-3 generalbox sitetopic"><h2 class="sectionname text-warning">Giới thiệu chung</h2><div class="no-overflow">Chào mừng các bạn đến với kênh học tập trực tuyến của Trường Đại học Công nghiệp TP.HCM, hệ thống cung cấp cho sinh viên những khóa học trực tuyến song song với các lớp học trên lớp mà sinh viên đang học tại trường, trong thời gian tham gia khoa học, sinh viên vui lòng làm bài tập theo yêu cầu đầy đủ. Chúc các bạn có nhiều kiến thức trên kênh học trực tuyến này.<br><p><br></p></div><ul class="section img-text"></ul></div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row bg-info">
+                                                    <h2 class="m-5">Lịch sử cấp quyền</h2>
+                                                      <table class="table table-bordered">
+                                                        <thead>
+                                                          <tr>
+                                                            <th>STT</th>
+                                                            <th>Loại tài khoản</th>
+                                                            <th>Mã bắt đầu</th>
+                                                            <th>Số lượng</th>
+                                                            <th>Mật khẩu</th>
+                                                          </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <td>1</td>
+                                                            <td>Anna</td>
+                                                            <td>Pitt</td>
+                                                            <td>35</td>
+                                                            <td>New York</td>
+                                                          </tr>
+                                                        </tbody>
+                                                      </table>
+                                                      <div class="row">
+                                                        <div class="col-sm-5">
+                                      
+                                                        </div>
+                                                        <div class="col-sm-7">      
+                                                          <button type="button" class="btn btn-success btn-lg m-5" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                            Cấp quyền tài khoản
+                                                          </button>
+                                                        </div>
+                                                        
+                                                        <!-- The Modal -->
+                                                        <div class="modal" id="myModal">
+                                                          <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                        
+                                                              <!-- Modal Header -->
+                                                              <div class="modal-header">
+                                                                <h4 class="modal-title">Thông tin cấp quyền</h4>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                              </div>
+                                                        
+                                                              <!-- Modal body -->
+                                                              <div class="modal-body">
+                                                                <div class="container">
+                                                                  <h2>Form cấp quyền</h2>
+                                                                  <form class="form-horizontal" action="/action_page.php">
+                                                                    <div class="form-group"  id="formDemo" name="formDemo"> 
+                                                                      <p>Loại tài khoản:</p>       
+                                                                      <div class="radio">
+                                                                        <label class="radio-inline"><input type="radio" name="optradio" checked> HS+MSHS</label>
+                                                                        <label class="radio-inline"><input type="radio" name="optradio"> GV+MSGV</label>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="mb-3 mt-3">
+                                                                      <label>Nhập mã số bắt đầu:</label>        
+                                                                      <input type="text" class="form-control" name="maso" placeholder="Enter ma so" required>
+                                                                    </div>
+                                                                    <div class="mb-3 mt-3">
+                                                                      <label>Nhập số lượng:</label>          
+                                                                      <input type="text" class="form-control" name="soluong" placeholder="Enter so luong" required>
+                                                                    </div>
+                                                                    <div class="mb-3 mt-3">
+                                                                      <label>Nhập mật khẩu:</label>         
+                                                                        <input type="password" class="form-control" id ="password" name="password" placeholder="Enter password" required>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-lg btn-success m-5">Xác nhận</button>
+                                                                  </form>
+                                                                </div>                         
+                                                              </div>
+                                                        
+                                                              <!-- Modal footer -->
+                                                              <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                              </div>
+                                                        
+                                                            </div>
+                                                          </div>
+                                      
+                                                      </div>
+                                                      
+                                                  </div>
+                                                  
+                                                  </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                           <div class="row bg-success">
+                                              <div class="col-sm-4">
+                                                  <img class="img-thumbnail mt-2 mb-0 mx-auto d-block" width="200" height="150" src="/img/iuh.png" alt="null">
+                                                  <p class="m-5">Chào mừng các bạn đến với Hệ thống kiểm tra va thi trực tuyến, kênh thông tin cung cấp các khóa học trực tuyến của nhà trường cho các bạn sinh viên.</p>
+                                              </div>
+                                                  <div class="col-sm-4">
+                                                    <h4 class="m-2 text-danger text-center">Liên kết</h4>
+                                                      <ul class="nav flex-column m-4">
+                                                        <li class="nav-item ">
+                                                          <a class="nav-link text-dark text-center" href="#">Website Nhà Trường</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                          <a class="nav-link text-dark text-center" href="#">Website Trung tâm QTHT</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                          <a class="nav-link text-dark text-center" href="#">Cổng Thông Tin học sinh</a>
+                                                        </li>
+                                                      </ul>
+                                                  </div>
+                                                  <div class="col-sm-4">
+                                                    <h4 class="m-2 text-danger text-center">Liên Hệ</h4>
+                                                    <div class="">
+                                                      <p>Trung tâm Quản trị Hệ thống - Trường Đại học Công nghiệp TP.HCM</p>
+                                                      <p>Phone : 0283.8940 390 - ext 168</p>
+                                                      <p>E-mail : csm@iuh.edu.vn</p>
+                                                    </div>         
+                                                  </div>
+                                            </div>
+                                            <div class="row bg-primary">
+                                                <p class="m-1 text-center">Copyright © 2022 - Phát triển bởi Nhóm 11 - ĐHCN TP.HCM</p>
+                                              </div>
+                                            </div>
+                                  
+                                          </div>
+                                        </div>
+                                  </body>
+                                  </html>                  </div>
+                              </div>
+                              <div class="mb-3 mt-3">
+                                <label>Nhập mã số bắt đầu:</label>        
+                                <input type="text" class="form-control" name="maso" placeholder="Enter ma so" required>
+                              </div>
+                              <div class="mb-3 mt-3">
+                                <label>Nhập số lượng:</label>          
+                                <input type="text" class="form-control" name="soluong" placeholder="Enter so luong" required>
+                              </div>
+                              <div class="mb-3 mt-3">
+                                <label>Nhập mật khẩu:</label>         
+                                  <input type="password" class="form-control" id ="password" name="password" placeholder="Enter password" required>
+                              </div>
+                              <button type="submit" class="btn btn-lg btn-success m-5">Xác nhận</button>
+                            </form>
+                          </div>                         
+                        </div>
+                  
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                  
+                      </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            </div>
+            <div class="row bg-light">
+                <div class="col-sm-6">
+                  <img class="img-thumbnail m-5" width="200" height="150" src="/img/iuh.png" alt="null">
+                  <p>Chào mừng các bạn đến với Hệ thống học tập trực tuyến của trường Đại học Công nghiệp TP.HCM, kênh thông tin cung cấp các khóa học trực tuyến của nhà trường cho các bạn sinh viên.</p>
+                </div>
+                <div class="col-sm-3">
+                  <h1 class="m-5 text-danger">Liên kết</h1>
+                    <ul class="nav flex-column m-4">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="#">Website Nhà Trường</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Website Trung tâm QTHT</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Cổng Thông Tin học sinh</a>
+                      </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                  <h1 class="m-5 pb-5 text-danger">Liên Hệ</h1>
+                  <div class="">
+                    <p>Trung tâm Quản trị Hệ thống - Trường Đại học Công nghiệp TP.HCM</p>
+                    <p>Phone : 0283.8940 390 - ext 168</p>
+                    <p>E-mail : csm@iuh.edu.vn</p>
+                  </div>         
+                </div>
+          </div>
+          <div class="row">
+              <p class="m-1 text-center">Copyright © 2022 - Phát triển bởi Nhóm 11 - ĐHCN TP.HCM</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
+          $("#formDemo").validate({
+            rules: {
+              maso: {
+                required: true,
+                number: true,
+                minlength: 6,
+                maxlength: 6,
+                min: 100000,
+              },
+              soluong: {
+                required: true,
+                number: true,
+                minlength: 1,
+                maxlength: 4,
+                min: 1,
+              },
+              password: {
+                required: true,
+                minlength: 6,
+                maxlength: 15
+              },
+            },
+            messages: {
+              maso: {
+                required: "Vui lòng nhập mã số bắt đầu!",
+                number: "Vui lòng nhập số",
+                minlength: "Độ dài tối thiểu 6 chữ số",
+                maxlength: "Độ dài tối đa 6 chữ số",
+                min: "Nhỏ nhất là 100000",
+                
+              },
+              
+              soluong: {
+                required: "Vui lòng nhập vào số lượng",
+                number: "Vui lòng nhập số",
+                minlength: "Độ dài tối thiểu 1 chữ số",
+                maxlength: "Độ tài tối đa 4 chữ số",
+                min: "Nhỏ nhất là 1"
+              },
+              password: {
+                required: "Vui lòng nhập mật khẩu!",
+                minlength: "Độ dài tối thiểu 6 kí tự",
+                maxlength: "Độ tài tối đa 15 kí tự"
+              },
+            }
+          });
+        });
+      </script>
+
+</body>
+</html>
