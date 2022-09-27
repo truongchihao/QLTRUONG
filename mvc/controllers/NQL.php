@@ -42,19 +42,14 @@ class NQL extends Controller{
 
     function CQ(){
 
-        if(isset($_POST["idtruong"])){
-            $idtruong = $_POST["idtruong"];
-
         //Model
         $ls = $this->model("LSModel");
         //View
 
         $this->view("NQL", [
             "Page"=>"TABLECQ",
-            "LS" => $ls->LichSu($idtruong)
+            "LS" => $ls->LichSu()
         ]);
-
-        }
         //View
 
         $this->view("NQL", [

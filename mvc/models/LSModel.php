@@ -1,8 +1,8 @@
 <?php
 class LSModel extends DB{
     
-    public function LichSu($idtruong){
-        $sql = "SELECT * FROM LS_CQ WHERE IDTRUONG='$idtruong'";
+    public function LichSu(){
+        $sql = "SELECT * FROM LS_CQ";
 
         return mysqli_query($this->con, $sql);
     }

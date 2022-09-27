@@ -16,6 +16,16 @@ if(empty($_SESSION["ttnql"])){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="/quanly/public/css/GD.css">
+  <link href="/live/public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/live/public/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/live/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/live/public/js/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body translate="no">
   <input type="checkbox" id="menu">
@@ -28,7 +38,7 @@ if(empty($_SESSION["ttnql"])){
 <nav class="nav">
 	<ul>
 		<li><a href="http://localhost/quanly/NQL/Home">Home</a></li>
-		<li><a href="#">Cấp quyền giáo viên, học sinh</a></li>
+		<li><a href="http://localhost/quanly/NQL/CQ">Cấp quyền giáo viên, học sinh</a></li>
         <li><a href="#">Quản lý danh sách học sinh</a></li>
         <li><a href="#">Quản lý danh sách giáo viên</a></li>
         <li><a href="#">Phân công giáo viên</a></li>
@@ -48,8 +58,8 @@ if(empty($_SESSION["ttnql"])){
             </div>
             <p class="text-info text-center">
                 <?php 
-                    if(isset($_SESSION["ttql"])){
-                        echo $_SESSION["ttql"]["FULL_NAME"];
+                    if(isset($_SESSION["ttnql"])){
+                        echo $_SESSION["ttnql"]["FULL_NAME"];
                     }
                 ?>
             </p>

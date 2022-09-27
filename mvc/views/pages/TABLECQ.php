@@ -5,10 +5,9 @@
   <br />
   <br />
   <br />
-  <form action="http://localhost/live/NQL/CQ" method="post">
-                        <input type="hidden" name="idtruong" value="<?php echo $_SESSION["idtruong"];?>">
-                        <button type="submit" id="submit1" class="btn btn-lg btn-success m-3" name="save">Xem lịch sử cấp quyền</button>
-                        </form>
+  <form action="http://localhost/quanly/NQL/CQ" method="post">
+    <button type="submit" id="submit1" class="btn btn-lg btn-success m-3" name="save">Xem lịch sử cấp quyền</button>
+  </form>
   <table id="user_data" class="table table-bordered table-striped">
     <thead>
     <tr>
@@ -44,6 +43,6 @@ if(isset($data["LS"])){
   
   </div>
   <div class="col-sm-7">
-      <a href="http://localhost/live/CQGVHS" class="btn btn-lg btn-success">Cấp quyền tài khoản</a>
+      <a href="http://localhost/quanly/CQGVHS/formCQ" class="btn btn-lg btn-success">Cấp quyền tài khoản</a>
   </div>
 </div>

@@ -16,13 +16,13 @@ class CQGVHS extends Controller{
 
     public function formCQ(){
 
-        $this->view("CQ", [
-            "CQ"=>"formCQ",
+        $this->view("NQL", [
+            "Page"=>"formCQ",
         ]);
         
     }
 
-    public function CapTK(){
+    public function CQ(){
 
         // 1. Get data NQL nhap
 
