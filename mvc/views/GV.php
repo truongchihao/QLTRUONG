@@ -50,8 +50,8 @@ if(empty($_SESSION["ttgv"])){
                     ?>
             </p>
             <p class="text-info">Chức vụ: <?php 
-                        if(isset($data["ttgv"])){
-                            echo $data["ttgv"]["CHUC_VU"];
+                        if(isset($_SESSION["ttgv"])){
+                            echo $_SESSION["ttgv"]["CHUC_VU"];
                         }
                     ?></p>      
         </div>
