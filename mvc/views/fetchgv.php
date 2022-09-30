@@ -36,9 +36,9 @@ foreach($result as $row)
  $sub_array[] = $row["MA_GV"];
  $sub_array[] = $row["FULL_NAME"];
  $sub_array[] = $row["CHUC_VU"];
- $sub_array[] = '<a href="http://localhost/live/QLGV/read/'.$row['IDGV'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
-                 <a href="http://localhost/live/QLGV/update/'.$row['IDGV'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
-                 <a href="http://localhost/live/QLGV/delete/'.$row['IDGV'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
+ $sub_array[] = '<a href="http://localhost/quanly/QLGV/read/'.$row['IDGV'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
+                 <a href="http://localhost/quanly/QLGV/update/'.$row['IDGV'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
+                 <a href="http://localhost/quanly/QLGV/delete/'.$row['IDGV'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
  $data[] = $sub_array;
 }
 $output = array(

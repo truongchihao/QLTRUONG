@@ -15,7 +15,7 @@ if(isset($data["updategv"])){
         <div class="page-header m-5">
             <h1>Chỉnh sửa</h1>
         </div>
-        <form id="formDemo" name="formDemo" action="http://localhost/live/QLGV/UpdateGV" method="post" style="height: 530px;">
+        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLGV/UpdateGV" method="post" style="height: 530px;">
                     <div class="form-group m-5">
                         <label>Tên giáo viên:</label>
                         <input type="text" name="fullname" class="form-control" 
@@ -97,9 +97,8 @@ if(isset($data["updategv"])){
                     </div>
                     <div class="form-inline m-5">
                     <input type="hidden" name="idgv" value="<?php echo $row["IDGV"];?>">
-                    <input type="hidden" name="idtruong" value="<?php echo $_SESSION["idtruong"];?>">
                     <button type="submit" id="submit1" class="btn btn-lg btn-success" name="save">Xác nhận</button>
-                    <a href="http://localhost/live/NQL/GV/<?php echo $row["IDMON"];?>" class="btn btn-lg btn-danger">Hủy</a>
+                    <a href="http://localhost/quanly/NQL/GV/<?php echo $row["IDMON"];?>" class="btn btn-lg btn-danger">Hủy</a>
                     </div>
                     
                 </from>

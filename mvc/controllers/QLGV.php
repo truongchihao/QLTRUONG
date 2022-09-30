@@ -6,7 +6,6 @@ class QLGV extends Controller{
         $this->GVModel = $this->model("GVModel");
         $this->MHModel = $this->model("MHModel");
         $this->ACModel = $this->model("ACModel");
-        $this->TRUONGModel = $this->model("TRUONGModel");
     }
 
     public function SayHi(){
@@ -34,7 +33,7 @@ class QLGV extends Controller{
 
         //View
 
-        $this->view("GV", [
+        $this->view("NQL", [
             "GV"=>"read",
             "readgv" => $this->GVModel->ReadGV($idgv),
         ]);
@@ -42,16 +41,12 @@ class QLGV extends Controller{
 
     public function update($idgv){
 
-        $row = $this->TRUONGModel->GETIDTRUONG($idgv);
-
-        $idtruong = $row["IDTRUONG"];
-
         //View
 
-        $this->view("GV", [
+        $this->view("NQL", [
             "GV"=>"update",
             "updategv" => $this->GVModel->ReadGV($idgv),
-            "monhoc" => $this->MHModel->read($idtruong),
+            "monhoc" => $this->MHModel->MH(),
         ]);
     }
 
@@ -67,7 +62,6 @@ class QLGV extends Controller{
             $idmon = $_POST["chuyenmon"];
             $chucvu = $_POST["chucvu"];
             $idgv = $_POST["idgv"];
-            $idtruong = $_POST["idtruong"];
         
         // 2. update database bang gv
 
@@ -75,10 +69,10 @@ class QLGV extends Controller{
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("GV", [
+        $this->view("NQL", [
             "GV"=>"update",
             "updategv" => $this->GVModel->ReadGV($idgv),
-            "monhoc" => $this->MHModel->read($idtruong),
+            "monhoc" => $this->MHModel->MH(),
             "result" => $kq,
         ]);
 
@@ -90,7 +84,7 @@ class QLGV extends Controller{
 
         //View
 
-        $this->view("GV", [
+        $this->view("NQL", [
             "GV"=>"delete",
             "ttgv" => $this->GVModel->TTGV($idgv),
         ]);
@@ -117,7 +111,7 @@ class QLGV extends Controller{
         }
         // 3. show chu thanh cong hay that bai
 
-        $this->view("GV", [
+        $this->view("NQL", [
             "GV"=>"delete",
             "ttgv" => $this->GVModel->TTGV($idgv),
             "result" => $kq,

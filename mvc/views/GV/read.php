@@ -92,6 +92,6 @@ if(isset($data["readgv"])){
                 ?>
             </p>
         </div>
-        <p><a href="http://localhost/live/NQL/GV/<?php echo $row["IDMON"];?>" class="btn btn-primary m-3">BACK</a></p>
+        <p><a href="http://localhost/quanly/NQL/GV/<?php echo $row["IDMON"];?>" class="btn btn-primary m-3">BACK</a></p>
     </div>
 </div>

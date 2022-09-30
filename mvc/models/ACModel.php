@@ -64,7 +64,7 @@ class ACModel extends DB{
                 if($optradio=="GV"){
                     //chen du lieu vao bang GIAO_VIEN
                     $sql = "INSERT INTO GIAO_VIEN (MA_GV, IDAC, IDMON, CHUC_VU, FULL_NAME, BIRTHDAY, EMAIL)
-                            VALUES('$idgv', '$ma', '$idtk', '$idmon', '$chucvu', '$fullnamegv', '$birthdaygv', '$emailgv')";
+                            VALUES('$ma', '$idtk', '$idmon', '$chucvu', '$fullnamegv', '$birthdaygv', '$emailgv')";
         
                     $result = false;
                     if( mysqli_query($this->con, $sql)) {

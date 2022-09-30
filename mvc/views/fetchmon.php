@@ -1,28 +1,27 @@
 <?php
 include('db.php');
-$rowcount = $data["rowcount"];
+$rowcount=$data["rowcount"];
 $query = '';
 $output = array();
 $query .= "SELECT * FROM MON_HOC ";
 if(isset($_POST["search"]["value"]))
 {
  $query .= 'WHERE ( IDMON LIKE "%'.$_POST["search"]["value"].'%" ';
- $query .= 'OR TEN_MON LIKE "%'.$_POST["search"]["value"].'%" ';
- $query .= 'OR TEN_KHOI LIKE "%'.$_POST["search"]["value"].'%" )';
+ $query .= 'OR TEN_MON LIKE "%'.$_POST["search"]["value"].'%" )';
 }
-/*
+
 if(isset($_POST["order"]))
 {
  $query .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
 }
 else
 {
- $query .= 'ORDER BY IDMON DESC ';
+ $query .= 'ORDER BY IDMON ASC ';
 }
 if($_POST["length"] != -1)
 {
  $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
-}*/
+}
 
 $statement = $connection->prepare($query);
 $statement->execute();
@@ -39,7 +38,7 @@ foreach($result as $row)
 }
 $output = array(
  "recordsTotal"  =>  $filtered_rows,
- "recordsFiltered" => $filtered_rows,
+ "recordsFiltered" => $rowcount,
  "data"    => $data
 );
 echo json_encode($output);

@@ -39,7 +39,7 @@ if(isset($data["ttmon"])){
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"http://localhost/live/QLGV/fetchgv/<?php echo $_SESSION["IDMON"];?>",
+   url:"http://localhost/quanly/QLGV/fetchgv/<?php echo $_SESSION["IDMON"];?>",
    type:"POST"
   },
   "columnDefs":[

@@ -26,6 +26,23 @@ if(empty($_SESSION["ttnql"])){
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        .box
+            {
+            width:1500px;
+            padding:20px;
+            background-color:#fff;
+            border:1px solid #ccc;
+            border-radius:5px;
+            margin-top:25px;
+            }
+
+        select.input-sm 
+            {
+            height: 40px;
+            line-height: 30px;
+            }
+    </style>
 </head>
 <body translate="no">
   <input type="checkbox" id="menu">
@@ -88,7 +105,15 @@ if(empty($_SESSION["ttnql"])){
         </div>
         <div class="row">
             <?php
-                 require_once "./mvc/views/pages/".$data["Page"].".php"
+            if(isset($data["Page"]))
+            {
+                require_once "./mvc/views/pages/".$data["Page"].".php";
+            }
+            if(isset($data["GV"]))
+            {
+                require_once "./mvc/views/GV/".$data["GV"].".php";
+            }
+                 
              ?>         
         </div>
 		</div>

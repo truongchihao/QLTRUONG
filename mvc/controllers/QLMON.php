@@ -17,11 +17,11 @@ class QLMON extends Controller{
 
         $result = $this->MHModel->MH();
         $rowcount=mysqli_num_rows($result);
+
         //View
 
         $this->view("fetchmon", [
-            "rowcount" => $rowcount,
-            "readmon" => $result,
+            "rowcount" => $rowcount
         ]);
     }
 

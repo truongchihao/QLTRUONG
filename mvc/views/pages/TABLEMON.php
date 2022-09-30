@@ -29,7 +29,7 @@
   },
   "columnDefs":[
    {
-    "targets":[1,2],
+    "targets":[0,2],
     "orderable":false,
    },
   ],
