@@ -3,7 +3,7 @@
     <div class="page-header">
       <h1 class="">Form cấp quyền</h1>
     </div>
-      <form class="form-horizontal" action="http://localhost/live/CQGVHS/CAPTK" id="formDemo" name="formDemo" method="post" style="height: 500px;">
+      <form class="form-horizontal" action="http://localhost/quanly/CQGVHS/CAPTK" id="formDemo" name="formDemo" method="post" style="height: 500px;">
         <div class="m-5"> 
           <p>Loại tài khoản:</p>       
           <div class="radio">
@@ -24,9 +24,9 @@
             <input type="password" class="form-control" id ="password" name="password" placeholder="Enter password" required>
         </div>
         <div class="m-5">
-        <input type="hidden" name="idtruong" value="<?php echo $_SESSION["idtruong"];?>">
+        <input type="hidden" name="idnql" value="<?php echo $_SESSION["ttnql"]["IDNQL"];?>">
         <button type="submit" id="submit1" class="btn btn-lg btn-success m-3" name="save">Xác nhận</button>
-        <a href="http://localhost/live/NQL/CQ" class="btn btn-lg btn-secondary m-3">BACK</a>
+        <a href="http://localhost/quanly/NQL/CQ" class="btn btn-lg btn-secondary m-3">BACK</a>
         </div>
         
      </form>

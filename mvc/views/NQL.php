@@ -40,7 +40,7 @@ if(empty($_SESSION["ttnql"])){
 		<li><a href="http://localhost/quanly/NQL/Home">Home</a></li>
 		<li><a href="http://localhost/quanly/NQL/CQ">Cấp quyền giáo viên, học sinh</a></li>
         <li><a href="#">Quản lý danh sách học sinh</a></li>
-        <li><a href="#">Quản lý danh sách giáo viên</a></li>
+        <li><a href="http://localhost/quanly/NQL/MON">Quản lý danh sách giáo viên</a></li>
         <li><a href="#">Phân công giáo viên</a></li>
 		<li><a href="http://localhost/quanly/Home/Login">Đăng xuất</a></li>
 	</ul>

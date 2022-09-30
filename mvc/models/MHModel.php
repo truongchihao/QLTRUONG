@@ -7,13 +7,6 @@ class MHModel extends DB{
         return mysqli_query($this->con, $sql);
     }
 
-    function read($idtruong){
-        $sql = "SELECT mh.IDMON, mh.TEN_MON, k.TEN_KHOI
-        FROM mon_hoc as mh, khoi as k, truong_hoc as tr WHERE mh.IDKHOI = k.IDKHOI AND tr.IDTRUONG=k.IDTRUONG AND tr.IDTRUONG='$idtruong'";
-
-        return mysqli_query($this->con, $sql);
-       }
-
        public function readmh($idmon){
         $sql = "SELECT * FROM mon_hoc WHERE IDMON='$idmon' ";
 

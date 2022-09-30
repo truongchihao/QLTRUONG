@@ -16,6 +16,7 @@
       <th class="text-center">Mã bắt đầu</th>
       <th class="text-center">Số lượng</th>
       <th class="text-center">Mật khẩu</th>
+      <th class="text-center">Người cấp</th>
     </tr>
     </thead>
     <tbody class="text-center">
@@ -30,6 +31,7 @@ if(isset($data["LS"])){
               <td>'.$row['MA_BD'].'</td>
               <td>'.$row['SO_LUONG'].'</td>
               <td>'.$row['MK'].'</td>
+              <td>'.$row['FULL_NAME'].'</td>
           </tr>';
   }
 }

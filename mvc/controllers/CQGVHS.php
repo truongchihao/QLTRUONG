@@ -22,7 +22,7 @@ class CQGVHS extends Controller{
         
     }
 
-    public function CQ(){
+    public function CAPTK(){
 
         // 1. Get data NQL nhap
 
@@ -32,17 +32,17 @@ class CQGVHS extends Controller{
             $maso = $_POST["maso"];
             $soluong = $_POST["soluong"];
             $password = $_POST["password"];
-            $idtruong = $_POST["idtruong"];
+            $idnql = $_POST["idnql"];
         
         // 2. insert database bang lscq gv hs
 
-        $idls = $this->LSModel->InsertLS($optradio, $maso, $soluong, $password, $idtruong);
-        $kq = $this->ACModel->InsertAC($optradio, $maso, $soluong, $password, $idtruong);
+        $idls = $this->LSModel->InsertLS($optradio, $maso, $soluong, $password, $idnql);
+        $kq = $this->ACModel->InsertAC($optradio, $maso, $soluong, $password);
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("CQ", [
-            "CQ"=>"formCQ",
+        $this->view("NQL", [
+            "Page"=>"formCQ",
             "result" => $kq
         ]);
 

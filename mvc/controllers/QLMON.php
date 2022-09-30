@@ -3,9 +3,7 @@ class QLMON extends Controller{
 
     public function __construct(){
 
-        $this->MHModel = $this->model("LOPModel");
-        $this->KHOIModel = $this->model("KHOIModel");
-        $this->TRUONGModel = $this->model("TRUONGModel");
+        $this->MHModel = $this->model("MHModel");
     }
 
     public function SayHi(){
@@ -15,15 +13,13 @@ class QLMON extends Controller{
         ]);
     }
 
-    public function fetchmon($idtruong){
+    public function fetchmon(){
 
-        $result = $this->MHModel->read($idtruong);
+        $result = $this->MHModel->MH();
         $rowcount=mysqli_num_rows($result);
-
         //View
 
         $this->view("fetchmon", [
-            "idtruong" => $idtruong,
             "rowcount" => $rowcount,
             "readmon" => $result,
         ]);

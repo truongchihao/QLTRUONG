@@ -11,7 +11,7 @@ class ACModel extends DB{
         return json_encode($result);
     }
     
-    public function InsertAC($optradio, $maso, $soluong, $password, $idtruong){
+    public function InsertAC($optradio, $maso, $soluong, $password){
 
         //lay gia tri IDAC cua bang ACOUNT
 
@@ -29,8 +29,8 @@ class ACModel extends DB{
             $tklist[] = $row;
         }
         $tk=[];
-        $idmon=$idtruong*111111;
-        $idlop=$idtruong*111111;
+        $idmon=1;
+        $idlop=1;
 
     foreach ($tklist as $std) {
     array_push($tk, $std['TK']);

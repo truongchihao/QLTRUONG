@@ -2,6 +2,6 @@
 
 $username = 'root';
 $password = '';
-$connection = new PDO( 'mysql:host=localhost;dbname=ql', $username, $password );
+$connection = new PDO( 'mysql:host=localhost;dbname=qltruong', $username, $password );
 
 ?>

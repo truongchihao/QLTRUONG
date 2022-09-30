@@ -46,10 +46,14 @@ class NQL extends Controller{
         $ls = $this->model("LSModel");
         //View
 
-        $this->view("NQL", [
-            "Page"=>"TABLECQ",
-            "LS" => $ls->LichSu()
-        ]);
+        if(isset($_POST["save"])){
+
+            $this->view("NQL", [
+                "Page"=>"TABLECQ",
+                "LS" => $ls->LichSu()
+            ]);
+        }
+        
         //View
 
         $this->view("NQL", [
@@ -83,7 +87,7 @@ class NQL extends Controller{
         //View
 
         $this->view("NQL", [
-            "Page"=>"TABLEPC",
+            "Pages"=>"TABLEPC",
         ]);
     }
 

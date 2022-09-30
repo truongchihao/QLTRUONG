@@ -8,9 +8,8 @@
     <table id="user_data" class="table table-bordered table-striped">
         <thead>
         <tr>
-             <th class="text-center">IDMON</th>
+             <th class="text-center">STT</th>
              <th class="text-center">TÊN MÔN</th>
-             <th class="text-center">THUỘC KHỐI</th> 
              <th class="text-center" style="width: 150px;">OPTION</th>
         </tr>
         </thead>
@@ -25,12 +24,12 @@
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"http://localhost/live/QLMON/fetchmon/<?php echo $_SESSION["idtruong"];?>",
+   url:"http://localhost/quanly/QLMON/fetchmon/",
    type:"POST"
   },
   "columnDefs":[
    {
-    "targets":[0, 1, 3],
+    "targets":[1,2],
     "orderable":false,
    },
   ],
