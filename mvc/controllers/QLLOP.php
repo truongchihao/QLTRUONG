@@ -15,15 +15,14 @@ class QLLOP extends Controller{
         ]);
     }
 
-    public function fetchlop($idtruong){
+    public function fetchlop(){
 
-        $result = $this->LOPModel->read($idtruong);
+        $result = $this->LOPModel->read();
         $rowcount=mysqli_num_rows($result);
 
         //View
 
         $this->view("fetchlop", [
-            "idtruong" => $idtruong,
             "rowcount" => $rowcount,
             "readlop" => $result,
         ]);

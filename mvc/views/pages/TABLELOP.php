@@ -19,7 +19,7 @@ if(isset($data["thongbao"])){
 ?>
 <div class="container box">
     <h1 class="text-center">QUẢN LÝ DANH SÁCH LỚP</h1>
-    <a href="http://localhost/live/QLLOP/insert/<?php echo $_SESSION["idtruong"];?>" class="btn btn-lg btn-success">Thêm lớp</a>
+    <a href="http://localhost/quanly/QLLOP/insert/" class="btn btn-lg btn-success">Thêm lớp</a>
     <br />
     <div class="table-responsive">
     <br />
@@ -46,7 +46,7 @@ if(isset($data["thongbao"])){
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"http://localhost/live/QLLOP/fetchlop/<?php echo $_SESSION["idtruong"];?>",
+   url:"http://localhost/quanly/QLLOP/fetchlop/",
    type:"POST"
   },
   "columnDefs":[

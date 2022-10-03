@@ -7,9 +7,9 @@ class LOPModel extends DB{
         return mysqli_query($this->con, $sql);
     }
 
-    function read($idtruong){
+    function read(){
         $sql = "SELECT l.IDLOP, l.TEN_LOP, l.SO_LUONG, k.TEN_KHOI
-        FROM lop as l, khoi as k, truong_hoc as tr WHERE l.IDKHOI = k.IDKHOI AND tr.IDTRUONG=k.IDTRUONG AND tr.IDTRUONG='$idtruong'";
+        FROM lop as l, khoi as k WHERE l.IDKHOI = k.IDKHOI";
 
         return mysqli_query($this->con, $sql);
        }

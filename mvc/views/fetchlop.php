@@ -1,11 +1,10 @@
 <?php
 include('db.php');
 $rowcount=$data["rowcount"];
-$idtruong=$data["idtruong"];
 $query = '';
 $output = array();
 $query .= "SELECT l.IDLOP, l.TEN_LOP, l.SO_LUONG, k.TEN_KHOI
-FROM lop as l, khoi as k, truong_hoc as tr WHERE l.IDKHOI = k.IDKHOI AND tr.IDTRUONG=k.IDTRUONG AND tr.IDTRUONG='$idtruong' ";
+FROM lop as l, khoi as k WHERE l.IDKHOI = k.IDKHOI ";
 if(isset($_POST["search"]["value"]))
 {
  $query .= 'AND ( IDLOP LIKE "%'.$_POST["search"]["value"].'%" ';
@@ -38,9 +37,9 @@ foreach($result as $row)
  $sub_array[] = $row["TEN_LOP"];
  $sub_array[] = $row["SO_LUONG"];
  $sub_array[] = $row["TEN_KHOI"];
- $sub_array[] = '<a href="http://localhost/live/NQL/HS/'.$row['IDLOP'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
-                 <a href="http://localhost/live/QLLOP/update/'.$row['IDLOP'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
-                 <a href="http://localhost/live/QLLOP/delete/'.$row['IDLOP'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
+ $sub_array[] = '<a href="http://localhost/quanly/NQL/HS/'.$row['IDLOP'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
+                 <a href="http://localhost/quanly/QLLOP/update/'.$row['IDLOP'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
+                 <a href="http://localhost/quanly/QLLOP/delete/'.$row['IDLOP'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
  $data[] = $sub_array;
 }
 $output = array(
