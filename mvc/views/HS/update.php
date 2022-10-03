@@ -15,7 +15,7 @@ if(isset($data["updatehs"])){
         <div class="page-header m-5">
             <h1>Chỉnh sửa</h1>
         </div>
-        <form id="formDemo" name="formDemo" action="http://localhost/live/QLHS/UpdateHS" method="post" style="height: 530px;">
+        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLHS/UpdateHS" method="post" style="height: 530px;">
                     <div class="form-group m-5">
                         <label>Tên học sinh:</label>
                         <input type="text" name="fullname" class="form-control" 
@@ -75,7 +75,7 @@ if(isset($data["updatehs"])){
                     <div class="form-inline m-5">
                     <input type="hidden" name="idhs" value="<?php echo $row["IDHS"];?>">
                     <button type="submit" id="submit1" class="btn btn-lg btn-success" name="save">Xác nhận</button>
-                    <a href="http://localhost/live/NQL/HS/<?php echo $row["IDLOP"];?>" class="btn btn-lg btn-danger">Hủy</a>
+                    <a href="http://localhost/quanly/NQL/HS/<?php echo $row["IDLOP"];?>" class="btn btn-lg btn-danger">Hủy</a>
                     </div>
                     
                 </from>

@@ -11,7 +11,12 @@ if(isset($data["ttlop"])){
 }
 ?>
 <div class="container box">
-    <h1 class="text-center">QUẢN LÝ DANH SÁCH HỌC SINH CỦA LỚP <?php echo $row["TEN_LOP"];?> </h1>
+    <h1 class="text-center">QUẢN LÝ DANH SÁCH HỌC SINH CỦA LỚP <?php 
+    if(isset($row))
+    {
+        echo $row["TEN_LOP"];
+    }
+    ?> </h1>
     <input type="hidden" name="idlop" value="<?php echo $row["IDLOP"];?>">
     <br />
     <div class="table-responsive">
@@ -22,8 +27,9 @@ if(isset($data["ttlop"])){
         <thead>
         <tr>
              <th class="text-center">IDHS</th>
+             <th class="text-center">MÃ HỌC SINH</th>
              <th class="text-center">FULL_NAME</th>
-             <th class="text-center" style="width: 90px;">OPTION</th>
+             <th class="text-center" style="width: 120px;">OPTION</th>
         </tr>
         </thead>
     </table>
@@ -37,12 +43,12 @@ if(isset($data["ttlop"])){
   "serverSide":true,
   "order":[],
   "ajax":{
-   url:"http://localhost/live/QLHS/fetchhs/<?php echo $row["IDLOP"];?>",
+   url:"http://localhost/quanly/QLHS/fetchhs/<?php echo $row["IDLOP"];?>",
    type:"POST"
   },
   "columnDefs":[
    {
-    "targets":[0],
+    "targets":[0,2,3],
     "orderable":false,
    },
   ],

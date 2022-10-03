@@ -73,6 +73,6 @@ if(isset($data["readhs"])){
                 ?>
             </p>
         </div>
-        <p><a href="http://localhost/live/NQL/HS/<?php echo $row["IDLOP"];?>" class="btn btn-primary m-3">BACK</a></p>
+        <p><a href="http://localhost/quanly/NQL/HS/<?php echo $row["IDLOP"];?>" class="btn btn-primary m-3">BACK</a></p>
     </div>
 </div>

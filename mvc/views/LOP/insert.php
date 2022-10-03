@@ -3,7 +3,7 @@
         <div class="page-header m-5">
             <h1>Thêm lớp học</h1>
         </div>
-        <form id="formDemo" name="formDemo" action="http://localhost/live/QLLOP/InsertLOP" method="post" style="height: 380px;">
+        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLLOP/InsertLOP" method="post" style="height: 380px;">
                     <div class="form-group m-5">
                         <label>Tên lớp học:</label>
                         <input type="text" name="tenlop" class="form-control" id="tenlop">
@@ -37,9 +37,8 @@
                         </select>
                     </div>
                     <div class="form-inline m-5">
-                    <input type="hidden" name="idtruong" value="<?php echo $_SESSION["idtruong"];?>">
                     <button type="submit" id="submit1" class="btn btn-lg btn-success" name="save">Xác nhận</button>
-                    <a href="http://localhost/live/NQL/LOP" class="btn btn-lg btn-danger">Hủy</a>
+                    <a href="http://localhost/quanly/NQL/LOP" class="btn btn-lg btn-danger">Hủy</a>
                     </div>
                     
                 </from>
@@ -67,14 +66,14 @@
             color: red;
         }
 </style>
-<script type="text/javascript" src="/live/public/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/quanly/public/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
         $("#tenlop").keyup(function(){
             var lop = $(this).val();
 
-            $.post("http://localhost/live/Ajax/CheckTENLOP", {tenlop:lop}, function(data){
+            $.post("http://localhost/quanly/Ajax/CheckTENLOP", {tenlop:lop}, function(data){
                $("#messagetenlop").html(data);
             });
           });

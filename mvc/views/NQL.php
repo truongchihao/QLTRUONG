@@ -113,7 +113,14 @@ if(empty($_SESSION["ttnql"])){
             {
                 require_once "./mvc/views/GV/".$data["GV"].".php";
             }
-                 
+            if(isset($data["LOP"]))
+            {
+                require_once "./mvc/views/LOP/".$data["LOP"].".php";
+            }  
+            if(isset($data["HS"]))
+            {
+                require_once "./mvc/views/HS/".$data["HS"].".php";
+            } 
              ?>         
         </div>
 		</div>

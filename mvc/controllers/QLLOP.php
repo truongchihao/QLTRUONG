@@ -5,7 +5,6 @@ class QLLOP extends Controller{
 
         $this->LOPModel = $this->model("LOPModel");
         $this->KHOIModel = $this->model("KHOIModel");
-        $this->TRUONGModel = $this->model("TRUONGModel");
     }
 
     public function SayHi(){
@@ -28,13 +27,13 @@ class QLLOP extends Controller{
         ]);
     }
 
-    public function insert($idtruong){
+    public function insert(){
 
         //View
 
-        $this->view("LOP", [
+        $this->view("NQL", [
             "LOP"=>"insert",
-            "khoi" => $this->KHOIModel->KHOI($idtruong),
+            "khoi" => $this->KHOIModel->KHOI(),
         ]);
     }
 
@@ -47,18 +46,17 @@ class QLLOP extends Controller{
             $tenlop = $_POST["tenlop"];
             $soluong = $_POST["soluong"];
             $idkhoi = $_POST["idkhoi"];
-            $idtruong = $_POST["idtruong"];
             
         
-        // 2. update database bang gv
+        // 2. 
 
         $kq = $this->LOPModel->InsertLOP($tenlop, $soluong, $idkhoi);
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("LOP", [
+        $this->view("NQL", [
             "LOP"=>"insert",
-            "khoi" => $this->KHOIModel->KHOI($idtruong),
+            "khoi" => $this->KHOIModel->KHOI(),
             "result" => $kq,
         ]);
 
@@ -78,19 +76,25 @@ class QLLOP extends Controller{
 
     public function update($idlop){
 
-        $row = $this->TRUONGModel->IDTRUONGLOP($idlop);
-
-        $idtruong = $row["IDTRUONG"];
-
-        if($idlop!=$idtruong*111111)
+        $row = $this->LOPModel->READLOP($idlop);
+        if($row != "loi")
         {
-            //View
-
-        $this->view("LOP", [
-            "LOP"=>"update",
-            "updatelop" => $this->LOPModel->ReadLOP($idlop),
-            "khoi" => $this->KHOIModel->KHOI($idtruong),
-        ]);
+            if($idlop!=1)
+            {
+                $this->view("NQL", [
+                    "LOP"=>"update",
+                    "updatelop" => $this->LOPModel->ReadLOP($idlop),
+                    "khoi" => $this->KHOIModel->KHOI(),
+                ]);
+            }
+            else
+            {
+                $this->view("NQL", [
+                    "Page"=>"TABLELOP",
+                    "thongbao"=>'macdinh',
+                ]);
+            }
+        
         }else{
 
             $this->view("NQL", [
@@ -112,7 +116,6 @@ class QLLOP extends Controller{
             $soluong = $_POST["soluong"];
             $idkhoi = $_POST["idkhoi"];
             $idlop = $_POST["idlop"];
-            $idtruong = $_POST["idtruong"];
         
         // 2. update database bang gv
 
@@ -120,10 +123,10 @@ class QLLOP extends Controller{
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("LOP", [
+        $this->view("NQL", [
             "LOP"=>"update",
             "updatelop" => $this->LOPModel->ReadLOP($idlop),
-            "khoi" => $this->KHOIModel->KHOI($idtruong),
+            "khoi" => $this->KHOIModel->KHOI(),
             "result" => $kq,
         ]);
 
@@ -133,18 +136,23 @@ class QLLOP extends Controller{
 
     public function delete($idlop){
 
-        $row = $this->TRUONGModel->IDTRUONGLOP($idlop);
-
-        $idtruong = $row["IDTRUONG"];
-
-        if($idlop!=$idtruong*111111)
+        $row = $this->LOPModel->READLOP($idlop);
+        if($row != "loi")
         {
-            //View
-
-        $this->view("LOP", [
-            "LOP"=>"delete",
-            "ttlop" => $this->LOPModel->TTLOP($idlop),
-        ]);
+            if($idlop!=1)
+            {
+                $this->view("NQL", [
+                    "LOP"=>"delete",
+                    "ttlop" => $this->LOPModel->TTLOP($idlop),
+                ]);
+            }
+            else
+            {
+                $this->view("NQL", [
+                    "Page"=>"TABLELOP",
+                    "thongbao"=>'xoamacdinh',
+                ]);
+            }
         }else{
 
             $this->view("NQL", [
@@ -171,7 +179,7 @@ class QLLOP extends Controller{
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("LOP", [
+        $this->view("NQL", [
             "LOP"=>"delete",
             "ttlop" => $this->LOPModel->TTLOP($idlop),
             "result" => $kq,

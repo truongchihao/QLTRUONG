@@ -25,7 +25,7 @@ if(isset($data["ttmon"])){
              <th class="text-center">MA_GV</th>
              <th class="text-center">FULL_NAME</th>
              <th class="text-center">CHUC_VU</th> 
-             <th class="text-center" style="width: 130px;">OPTION</th>
+             <th class="text-center" style="width: 100px;">OPTION</th>
         </tr>
         </thead>
     </table>

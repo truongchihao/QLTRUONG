@@ -6,7 +6,6 @@ class QLHS extends Controller{
         $this->LOPModel = $this->model("LOPModel");
         $this->HSModel = $this->model("HSModel");
         $this->ACModel = $this->model("ACModel");
-        $this->TRUONGModel = $this->model("TRUONGModel");
     }
 
     public function SayHi(){
@@ -34,7 +33,7 @@ class QLHS extends Controller{
 
         //View
 
-        $this->view("HS", [
+        $this->view("NQL", [
             "HS"=>"read",
             "readhs" => $this->HSModel->ReadHS($idhs),
         ]);
@@ -42,16 +41,12 @@ class QLHS extends Controller{
 
     public function update($idhs){
 
-        $row = $this->TRUONGModel->IDTRUONGHS($idhs);
-
-        $idtruong = $row["IDTRUONG"];
-
         //View
 
-        $this->view("HS", [
+        $this->view("NQL", [
             "HS"=>"update",
             "updatehs" => $this->HSModel->ReadHS($idhs),
-            "lop" => $this->LOPModel->LOP($idtruong),
+            "lop" => $this->LOPModel->LOP(),
         ]);
     }
 
@@ -66,7 +61,6 @@ class QLHS extends Controller{
             $email = $_POST["email"];
             $idhs = $_POST["idhs"];
             $idlop = $_POST["idlop"];
-            $idtruong = $_POST["idtruong"];
         
         // 2. update database bang gv
 
@@ -74,10 +68,10 @@ class QLHS extends Controller{
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("HS", [
+        $this->view("NQL", [
             "HS"=>"update",
             "updatehs" => $this->HSModel->ReadHS($idhs),
-            "lop" => $this->LOPModel->LOP($idtruong),
+            "lop" => $this->LOPModel->LOP(),
             "result" => $kq,
         ]);
 
@@ -89,7 +83,7 @@ class QLHS extends Controller{
 
         //View
 
-        $this->view("HS", [
+        $this->view("NQL", [
             "HS"=>"delete",
             "tths" => $this->HSModel->TTHS($idhs),
         ]);
@@ -116,7 +110,7 @@ class QLHS extends Controller{
         }
         // 3. show chu thanh cong hay that bai
 
-        $this->view("HS", [
+        $this->view("NQL", [
             "HS"=>"delete",
             "tths" => $this->HSModel->TTHS($idhs),
             "result" => $kq,

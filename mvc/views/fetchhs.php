@@ -8,6 +8,7 @@ $query .= "SELECT * FROM HOC_SINH WHERE IDLOP = '$idlop' ";
 if(isset($_POST["search"]["value"]))
 {
  $query .= 'AND ( IDHS LIKE "%'.$_POST["search"]["value"].'%" ';
+ $query .= 'OR MA_HS LIKE "%'.$_POST["search"]["value"].'%" ';
  $query .= 'OR FULL_NAME LIKE "%'.$_POST["search"]["value"].'%" )';
 }
 if(isset($_POST["order"]))
@@ -32,10 +33,11 @@ foreach($result as $row)
 {
  $sub_array = array();
  $sub_array[] = $row["IDHS"];
+ $sub_array[] = $row["MA_HS"];
  $sub_array[] = $row["FULL_NAME"];
- $sub_array[] = '<a href="http://localhost/live/QLHS/read/'.$row['IDHS'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
-                 <a href="http://localhost/live/QLHS/update/'.$row['IDHS'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
-                 <a href="http://localhost/live/QLHS/delete/'.$row['IDHS'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
+ $sub_array[] = '<a href="http://localhost/quanly/QLHS/read/'.$row['IDHS'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a>
+                 <a href="http://localhost/quanly/QLHS/update/'.$row['IDHS'].'" title="Chỉnh sửa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-pencil"></span></a>
+                 <a href="http://localhost/quanly/QLHS/delete/'.$row['IDHS'].'" title="Xóa" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-trash"></span></a>';
  $data[] = $sub_array;
 }
 $output = array(

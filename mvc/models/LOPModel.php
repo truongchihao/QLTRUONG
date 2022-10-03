@@ -1,9 +1,8 @@
 <?php
 class LOPModel extends DB{
 
-    public function LOP($idtruong){
-        $sql = "SELECT l.IDLOP, l.TEN_LOP FROM lop as l, khoi as k, truong_hoc as tr 
-        WHERE l.IDKHOI= k.IDKHOI AND tr.IDTRUONG=k.IDTRUONG AND tr.IDTRUONG='$idtruong'";
+    public function LOP(){
+        $sql = "SELECT * FROM lop";
         return mysqli_query($this->con, $sql);
     }
 

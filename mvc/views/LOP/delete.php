@@ -4,20 +4,27 @@ $row = mysqli_fetch_array($data["ttlop"]);
 <div class="container flu">
     <div class="mx-auto mt-5 mb-5 alert-danger" style="width:600px;">
         <h3 class="m-5">Bạn có chắc muốn xóa thông tin của lớp có IDLOP như dưới?</h3>
-        <form action="http://localhost/live/QLLOP/DeleteLOP" method="post">
+        <form action="http://localhost/quanly/QLLOP/DeleteLOP" method="post">
 			<div class="alert alert-danger fade in">
             <div class="form-inline m-3">
                 <label>IDLOP:</label>
                 <p class="form-control-static">
                     <?php
+                    if(isset($row["IDLOP"]))
+                    {
                         echo $row["IDLOP"];
+                    }
                     ?>
                 </p>
             </div>
             <div class="form-inline m-3">
-                <input type="hidden" name="idlop" value="<?php echo $row["IDLOP"];?>">
+                <input type="hidden" name="idlop" value="<?php 
+                if(isset($row["IDLOP"]))
+                    {
+                        echo $row["IDLOP"];
+                    }?>">
                 <button type="submit" id="submit1" class="btn btn-lg btn-danger" name="save">Xác nhận</button>
-                <a href="http://localhost/live/NQL/LOP" class="btn btn-lg btn-success">Hủy</a>
+                <a href="http://localhost/quanly/NQL/LOP" class="btn btn-lg btn-success">Hủy</a>
             </div>
 	        </div>
 		</form> 

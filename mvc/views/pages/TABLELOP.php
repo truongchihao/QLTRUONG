@@ -1,14 +1,28 @@
 <?php
 if(isset($data["thongbao"])){
     $row = $data["thongbao"];
-    if($row=="loi")
+    if($row=="macdinh")
     {
         echo 
            '<script>
                 window.alert("Không được phép chỉnh sửa lớp mặc định");
            </script>';
     }
+    if($row=="loi")
+    {
+        echo 
+           '<script>
+                window.alert("Không có IDLOP cần chỉnh sửa");
+           </script>';
+    }
     if($row=="loixoa")
+    {
+        echo 
+           '<script>
+                window.alert("Không có IDLOP cần xóa");
+           </script>';
+    }
+    if($row=="xoamacdinh")
     {
         echo 
            '<script>
@@ -51,7 +65,7 @@ if(isset($data["thongbao"])){
   },
   "columnDefs":[
    {
-    "targets":[0, 1, 4],
+    "targets":[0, 1, 2, 4],
     "orderable":false,
    },
   ],

@@ -10,7 +10,7 @@
         <tr>
              <th class="text-center">STT</th>
              <th class="text-center">TÊN MÔN</th>
-             <th class="text-center" style="width: 150px;">OPTION</th>
+             <th class="text-center" style="width: 100px;">OPTION</th>
         </tr>
         </thead>
     </table>
