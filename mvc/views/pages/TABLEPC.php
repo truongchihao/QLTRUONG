@@ -1,6 +1,6 @@
 <div class="container box">
     <h1 class="text-center">QUẢN LÝ DANH SÁCH PHÂN CÔNG GIÁO VIÊN</h1>
-    <a href="http://localhost/live/QLPC/insert/<?php echo $_SESSION["idtruong"];?>" class="btn btn-lg btn-success">Thêm Giáo viên</a>
+    <a href="http://localhost/quanly/QLPC/insert/<?php echo $_SESSION["idtruong"];?>" class="btn btn-lg btn-success">Thêm Giáo viên</a>
     <br />
     <div class="table-responsive">
     <br />
