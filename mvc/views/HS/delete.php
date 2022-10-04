@@ -7,7 +7,7 @@ $row = mysqli_fetch_array($data["tths"]);
         <form action="http://localhost/quanly/QLHS/DeleteHS" method="post">
 			<div class="alert alert-danger fade in">
             <div class="form-inline m-3">
-                <label>IDGV:</label>
+                <label>IDHS</label>
                 <p class="form-control-static">
                     <?php
                     if(isset($row))
