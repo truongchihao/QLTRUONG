@@ -87,7 +87,7 @@ class NQL extends Controller{
         //View
 
         $this->view("NQL", [
-            "Pages"=>"TABLEPC",
+            "Page"=>"TABLEPC",
         ]);
     }
 

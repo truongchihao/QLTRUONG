@@ -25,6 +25,30 @@ class GVModel extends DB{
         return json_encode($result);
     }
 
+    public function CheckMAGV($magv){
+        $sql = "SELECT * FROM GIAO_VIEN WHERE MA_GV = '$magv'";
+
+        $row = mysqli_query($this->con, $sql);
+        $result = false;
+        if( mysqli_num_rows($row)>0) {
+            $gv = mysqli_fetch_array($row);
+            $result = $gv["IDGV"];
+        }
+        return json_encode($result);
+    }
+
+    public function CheckTENGV($tengv){
+        $sql = "SELECT * FROM GIAO_VIEN WHERE FULL_NAME = '$tengv'";
+
+        $row = mysqli_query($this->con, $sql);
+        $result = false;
+        if( mysqli_num_rows($row)>0) {
+            $gv = mysqli_fetch_array($row);
+            $result = $gv["IDGV"];
+        }
+        return json_encode($result);
+    }
+
     public function ReadGV($idgv){
         $sql = "SELECT gv.IDGV, gv.MA_GV, gv.FULL_NAME, mh.IDMON, mh.TEN_MON, gv.CHUC_VU, gv.BIRTHDAY, gv.EMAIL
         FROM giao_vien As gv, mon_hoc AS mh

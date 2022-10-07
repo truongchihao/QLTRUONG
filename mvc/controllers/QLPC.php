@@ -16,28 +16,27 @@ class QLPC extends Controller{
         ]);
     }
 
-    public function fetchpc($idtruong){
+    public function fetchpc(){
 
-        $result = $this->PCModel->readpc($idtruong);
+        $result = $this->PCModel->readpc();
 
         $rowcount=mysqli_num_rows($result);
 
         //View
 
         $this->view("fetchpc", [
-            "idtruong" => $idtruong,
             "rowcount" => $rowcount,
             "readpc" => $result,
         ]);
     }
 
-    public function insert($idtruong){
+    public function insert(){
 
         //View
 
-        $this->view("PC", [
+        $this->view("NQL", [
             "PC"=>"insert",
-            "lop" => $this->LOPModel->LOP($idtruong),
+            "lop" => $this->LOPModel->LOP(),
         ]);
     }
 
@@ -49,7 +48,6 @@ class QLPC extends Controller{
             
             $idgv = $_POST["idgv"];
             $idlop = $_POST["idlop"];
-            $idtruong = $_POST["idtruong"];
         
         // 2. update database bang gv
 
@@ -57,9 +55,9 @@ class QLPC extends Controller{
 
         // 3. show chu thanh cong hay that bai
 
-        $this->view("PC", [
+        $this->view("NQL", [
             "PC"=>"insert",
-            "lop" => $this->LOPModel->LOP($idtruong),
+            "lop" => $this->LOPModel->LOP(),
             "result" => $kq,
         ]);
 

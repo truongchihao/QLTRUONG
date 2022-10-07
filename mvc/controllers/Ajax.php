@@ -29,5 +29,35 @@ class Ajax extends Controller{
         
     }
 
+    public function CheckMAGV(){
+
+        $magv = $_POST["magv"];
+
+        $kq = $this->GVModel->CheckMAGV($magv);
+        if($kq=='false'){
+            echo 'Mã GV không tồn tại';
+        }
+        else
+        {
+            echo 'IDGV cần tìm là '.$kq;
+        }
+        
+    }
+
+    public function CheckTENGV(){
+
+        $tengv = $_POST["tengv"];
+
+        $kq = $this->GVModel->CheckTENGV($tengv);
+        if($kq=='false'){
+            echo 'Tên GV không tồn tại';
+        }
+        else
+        {
+            echo 'IDGV cần tìm là '.$kq;
+        }
+        
+    }
+
 }
 ?>
