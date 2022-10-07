@@ -8,13 +8,6 @@ class QLGV extends Controller{
         $this->ACModel = $this->model("ACModel");
     }
 
-    public function SayHi(){
-
-        $this->view("GV", [
-            "GV"=>"read",
-        ]);
-    }
-
     public function fetchgv($idmon){
 
         $result = $this->GVModel->GVIDMON($idmon);

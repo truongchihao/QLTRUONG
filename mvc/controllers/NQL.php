@@ -1,14 +1,6 @@
 <?php
 class NQL extends Controller{
-    function SayHi(){
-
-        //View
-
-        $this->view("NQL", [
-            "Page"=>"rong",
-        ]);
-    }
-
+    
     function Home(){
 
         //View

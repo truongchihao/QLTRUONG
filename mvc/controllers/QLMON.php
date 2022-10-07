@@ -6,13 +6,6 @@ class QLMON extends Controller{
         $this->MHModel = $this->model("MHModel");
     }
 
-    public function SayHi(){
-
-        $this->view("GV", [
-            "GV"=>"read",
-        ]);
-    }
-
     public function fetchmon(){
 
         $result = $this->MHModel->MH();

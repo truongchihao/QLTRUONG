@@ -8,13 +8,6 @@ class QLHS extends Controller{
         $this->ACModel = $this->model("ACModel");
     }
 
-    public function SayHi(){
-
-        $this->view("HS", [
-            "HS"=>"read",
-        ]);
-    }
-
     public function fetchhs($idlop){
 
         $result = $this->HSModel->read($idlop);

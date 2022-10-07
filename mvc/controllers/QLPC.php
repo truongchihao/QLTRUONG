@@ -9,13 +9,6 @@ class QLPC extends Controller{
         $this->PCModel = $this->model("PCModel");
     }
 
-    public function SayHi(){
-
-        $this->view("GV", [
-            "GV"=>"read",
-        ]);
-    }
-
     public function fetchpc(){
 
         $result = $this->PCModel->readpc();

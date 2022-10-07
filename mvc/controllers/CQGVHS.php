@@ -7,13 +7,6 @@ class CQGVHS extends Controller{
         $this->ACModel = $this->model("ACModel");
     }
 
-    public function SayHi(){
-
-        $this->view("CQ", [
-            "CQ"=>"formCQ",
-        ]);
-    }
-
     public function formCQ(){
 
         $this->view("NQL", [

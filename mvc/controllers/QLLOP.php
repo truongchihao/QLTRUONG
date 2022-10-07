@@ -7,13 +7,6 @@ class QLLOP extends Controller{
         $this->KHOIModel = $this->model("KHOIModel");
     }
 
-    public function SayHi(){
-
-        $this->view("GV", [
-            "GV"=>"read",
-        ]);
-    }
-
     public function fetchlop(){
 
         $result = $this->LOPModel->read();
