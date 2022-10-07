@@ -15,7 +15,7 @@ if(isset($data["updatehs"])){
         <div class="page-header m-5">
             <h1>Chỉnh sửa</h1>
         </div>
-        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLHS/UpdateHS" method="post" style="height: 530px;">
+        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLHS/UpdateHS" method="post" style="height: auto;">
                     <div class="form-group m-5">
                         <label>Tên học sinh:</label>
                         <input type="text" name="fullname" class="form-control" 

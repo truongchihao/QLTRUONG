@@ -15,7 +15,7 @@ if(isset($data["updatelop"])){
         <div class="page-header m-5">
             <h1>Chỉnh sửa</h1>
         </div>
-        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLLOP/UpdateLOP" method="post" style="height: 380px;">
+        <form id="formDemo" name="formDemo" action="http://localhost/quanly/QLLOP/UpdateLOP" method="post" style="height: auto;">
                     <div class="form-group m-5">
                         <label>Tên lớp học:</label>
                         <input id="tenlop" type="text" name="tenlop" class="form-control"
