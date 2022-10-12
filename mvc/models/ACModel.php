@@ -52,6 +52,8 @@ class ACModel extends DB{
                 $i--;
                 $idac--;
             }else{
+
+                $password = md5($password);
                 //chen du lieu vao bang ACCOUNT  
                 $sql = "INSERT INTO ACCOUNT (IDAC, TK, MK)
                         VALUES('$idtk', '$optradio$ma', '$password') ";

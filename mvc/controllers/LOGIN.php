@@ -18,6 +18,7 @@ class LOGIN extends Controller{
             
             $TK = $_POST["username"];
             $MK = $_POST["password"];
+            $MK = md5($MK);
         
         // 2. kiem tra database co tai khoan mat khau khong
 

@@ -27,7 +27,13 @@ if(empty($_SESSION["ttgv"])){
 <nav class="nav">
 	<ul>
 		<li><a href="http://localhost/quanly/GV/Home">Home</a></li>
-		<li><a href="#">Xem lớp được phân công</a></li>
+		<li>
+        <?php 
+            if(isset($_SESSION["ttgv"])){
+                echo '<a href="http://localhost/quanly/GV/LOP/'.$_SESSION["ttgv"]["IDGV"].'">Xem lớp được phân công</a>';
+            }
+        ?>
+        </li>
 		<li><a href="http://localhost/quanly/Home/Login">Đăng xuất</a></li>
 	</ul>
 </nav>

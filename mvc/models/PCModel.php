@@ -21,5 +21,13 @@ class PCModel extends DB{
               return json_encode($result);
        }
 
+       function dslop($idgv){
+              $sql = "SELECT *
+              FROM lop as l, phan_cong as pc, giao_vien as gv
+              WHERE l.IDLOP = pc.IDLOP AND pc.IDGV = gv.IDGV and gv.IDGV ='$idgv'";
+              
+              return mysqli_query($this->con, $sql);
+             }
+
 }
 ?>
