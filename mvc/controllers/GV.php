@@ -18,13 +18,21 @@ class GV extends Controller{
 
     function LOP($idgv){
 
-        $pc = $this->model("PCModel");
         //View
 
         $this->view("GV", [
             "Page"=>"TABLEGVLOP",
-            "GVLOP" => $pc->dslop($idgv),
+            "GVLOP" => $this->PCModel->dslop($idgv),
         ]);
-        }
+    }
+
+    function LOPDAY($idlop){
+
+        //View
+
+        $this->view("GV", [
+            "Page"=>"LOPDAY",
+        ]);
+    }
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-class PCModel extends DB{
+class TLModel extends DB{
     
        function readpc(){
         $sql = "SELECT *

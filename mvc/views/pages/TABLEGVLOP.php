@@ -24,8 +24,12 @@ if(isset($data["GVLOP"])){
     echo '<tr>
               <td>'.$i.'</td>
               <td>'.$row['TEN_LOP'].'</td>
-              <td><a href="http://localhost/quanly/GV/read/'.$row['IDLOP'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+              <td><a href="http://localhost/quanly/GV/LOPDAY/'.$row['IDLOP'].'" title="Xem chi tiết" data-toggle="tooltip" class="m-3"><span class="glyphicon glyphicon-eye-open"></span></a></td>
           </tr>';
+    }
+    else
+    {
+      header("location: http://localhost/quanly/Home/Login");
     }
   }
 }
