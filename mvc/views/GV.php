@@ -115,7 +115,7 @@ if(empty($_SESSION["ttgv"])){
                 {
                     require_once "./mvc/views/pages/".$data["Page"].".php";
                 }
-                if(isset($data["GV"]))
+                if(isset($data["TAILIEU"]))
                 {
                     require_once "./mvc/views/TAILIEU/".$data["TAILIEU"].".php";
                 }

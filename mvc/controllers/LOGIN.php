@@ -7,6 +7,7 @@ class LOGIN extends Controller{
         $this->NQLModel = $this->model("NQLModel");
         $this->GVModel = $this->model("GVModel");
         $this->HSModel = $this->model("HSModel");
+        $this->PCModel = $this->model("PCModel");
     }
 
     function TK(){

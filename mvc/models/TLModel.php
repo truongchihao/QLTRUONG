@@ -10,9 +10,10 @@ class TLModel extends DB{
         return mysqli_query($this->con, $sql);
        }
 
-       public function InsertPC($idgv, $idlop){
-              $sql = "INSERT INTO PHAN_CONG (IDGV, IDLOP)
-              VALUES('$idgv', '$idlop')";
+       public function InsertTL($name, $ngay, $file, $idgv, $idlop){
+
+              $sql = "INSERT INTO TAI_LIEU(LOAI, NGAY_UPLOAD, IDGV, NAME_FILE, IDLOP) 
+              VALUES('$name', '$ngay', '$idgv', '$file', '$idlop')";
       
               $result = false;
               if( mysqli_query($this->con, $sql)) {

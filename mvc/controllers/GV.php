@@ -26,12 +26,15 @@ class GV extends Controller{
         ]);
     }
 
-    function LOPDAY($idlop){
+    function LOPDAY($idgv, $idlop){
 
         //View
+        $result = $this->PCModel->LOPDAY($idgv, $idlop);
+        $row = mysqli_fetch_array($result);
 
         $this->view("GV", [
             "Page"=>"LOPDAY",
+            "LOPDAY"=>$row,
         ]);
     }
 }

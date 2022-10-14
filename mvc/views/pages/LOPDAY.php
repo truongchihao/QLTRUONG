@@ -1,6 +1,25 @@
-<h1>Lớp </h1>
+<h1>Lớp <?php 
+        if(isset($data["LOPDAY"]) && $data["LOPDAY"]["IDGV"] == $_SESSION["ttgv"]["IDGV"]){
+            $ttgvlop = $data["LOPDAY"];
+            echo $ttgvlop["TEN_LOP"];
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+        ?>
+</h1>
 <div class="container box">
-<a href="http://localhost/quanly/UPLOAD/tailieu" class="btn btn-lg btn-success">Upload tài liệu</a>
+    <form class="form-horizontal" action="http://localhost/quanly/UPLOAD/tailieu" id="formDemo" name="formDemo" method="post" style="height: autopx;">
+        <div class="m-5">
+        <input type="hidden" name="idlop" value="<?php 
+        if(isset($ttgvlop)){
+          echo $ttgvlop["IDLOP"];
+        }
+        ?>">
+        <button type="submit" id="submit1" class="btn btn-lg btn-success m-3" name="save">Upload tài liệu</button>
+        </div>
+    </form>
     <div class="border border-success border-end-0 border-start-0 border-top-0">
         <h3>Tài liệu</h3>
 

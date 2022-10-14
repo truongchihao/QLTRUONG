@@ -29,10 +29,10 @@ class PCModel extends DB{
               return mysqli_query($this->con, $sql);
        }
 
-       function lopday($idgv){
+       function lopday($idgv, $idlop){
               $sql = "SELECT *
               FROM lop as l, phan_cong as pc, giao_vien as gv
-              WHERE l.IDLOP = pc.IDLOP AND pc.IDGV = gv.IDGV and gv.IDGV ='$idgv'";
+              WHERE l.IDLOP = pc.IDLOP AND pc.IDGV = gv.IDGV and gv.IDGV ='$idgv' AND l.IDLOP = '$idlop'";
               
               return mysqli_query($this->con, $sql);
        }
