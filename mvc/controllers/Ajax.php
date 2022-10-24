@@ -10,6 +10,7 @@ class Ajax extends Controller{
     public function CheckTENLOP(){
 
         $tenlop = $_POST["tenlop"];
+        $tenlop=preg_quote($tenlop);
 
         $kq = $this->LOPModel->CheckTENLOP($tenlop);
         if($kq=='true'){
@@ -21,6 +22,7 @@ class Ajax extends Controller{
     public function CheckIDGV(){
 
         $idgv = $_POST["idgv"];
+        $idgv=preg_quote($idgv);
 
         $kq = $this->GVModel->CheckIDGV($idgv);
         if($kq=='false'){
@@ -32,6 +34,7 @@ class Ajax extends Controller{
     public function CheckMAGV(){
 
         $magv = $_POST["magv"];
+        $magv=preg_quote($magv);
 
         $kq = $this->GVModel->CheckMAGV($magv);
         if($kq=='false'){
@@ -47,6 +50,7 @@ class Ajax extends Controller{
     public function CheckTENGV(){
 
         $tengv = $_POST["tengv"];
+        $tengv=preg_quote($tengv);
 
         $kq = $this->GVModel->CheckTENGV($tengv);
         if($kq=='false'){

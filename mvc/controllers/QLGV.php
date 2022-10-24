@@ -10,41 +10,68 @@ class QLGV extends Controller{
 
     public function fetchgv($idmon){
 
-        $idmon=preg_quote($idmon);
+        //$idmon=preg_quote($idmon);
 
-        $result = $this->GVModel->GVIDMON($idmon);
-        $rowcount=mysqli_num_rows($result);
+        if(is_numeric($idmon))
+        {
+            $result = $this->GVModel->GVIDMON($idmon);
+            $rowcount=mysqli_num_rows($result);
 
-        //View
+            //View
 
-        $this->view("fetchgv", [
-            "idmon" => $idmon,
-            "rowcount" => $rowcount,
-            "readgv" => $result,
-        ]);
+            $this->view("fetchgv", [
+                "idmon" => $idmon,
+                "rowcount" => $rowcount,
+                "readgv" => $result,
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function read($idgv){
 
         //View
-        $idgv=preg_quote($idgv);
+        //$idgv=preg_quote($idgv);
 
-        $this->view("NQL", [
-            "GV"=>"read",
-            "readgv" => $this->GVModel->ReadGV($idgv),
-        ]);
+        if(is_numeric($idgv))
+        {
+            $this->view("NQL", [
+                "GV"=>"read",
+                "readgv" => $this->GVModel->ReadGV($idgv),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function update($idgv){
 
         //View
-        $idgv=preg_quote($idgv);
+        //$idgv=preg_quote($idgv);
 
-        $this->view("NQL", [
-            "GV"=>"update",
-            "updategv" => $this->GVModel->ReadGV($idgv),
-            "monhoc" => $this->MHModel->MH(),
-        ]);
+        if(is_numeric($idgv))
+        {
+            $this->view("NQL", [
+                "GV"=>"update",
+                "updategv" => $this->GVModel->ReadGV($idgv),
+                "monhoc" => $this->MHModel->MH(),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function UpdateGV(){
@@ -80,12 +107,21 @@ class QLGV extends Controller{
     public function delete($idgv){
 
         //View
-        $idgv=preg_quote($idgv);
+        //$idgv=preg_quote($idgv);
 
-        $this->view("NQL", [
-            "GV"=>"delete",
-            "ttgv" => $this->GVModel->TTGV($idgv),
-        ]);
+        if(is_numeric($idgv))
+        {
+            $this->view("NQL", [
+                "GV"=>"delete",
+                "ttgv" => $this->GVModel->TTGV($idgv),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function DeleteGV(){

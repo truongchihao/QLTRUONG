@@ -19,6 +19,8 @@ class LOGIN extends Controller{
             
             $TK = $_POST["username"];
             $MK = $_POST["password"];
+            //$TK=preg_quote($TK);
+            //$MK=preg_quote($MK);
             $MK = hash('sha512', $MK);
         
         // 2. kiem tra database co tai khoan mat khau khong

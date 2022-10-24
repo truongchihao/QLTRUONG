@@ -10,40 +10,68 @@ class QLHS extends Controller{
 
     public function fetchhs($idlop){
 
-        $idlop=preg_quote($idlop);
-        $result = $this->HSModel->read($idlop);
-        $rowcount=mysqli_num_rows($result);
+        //$idlop=preg_quote($idlop);
 
-        //View
+        if(is_numeric($idlop))
+        {
+            $result = $this->HSModel->read($idlop);
+            $rowcount=mysqli_num_rows($result);
 
-        $this->view("fetchhs", [
-            "idlop" => $idlop,
-            "rowcount" => $rowcount,
-            "readhs" => $result,
-        ]);
+            //View
+
+            $this->view("fetchhs", [
+                "idlop" => $idlop,
+                "rowcount" => $rowcount,
+                "readhs" => $result,
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function read($idhs){
 
         //View
-        $idhs=preg_quote($idhs);
+        //$idhs=preg_quote($idhs);
 
-        $this->view("NQL", [
-            "HS"=>"read",
-            "readhs" => $this->HSModel->ReadHS($idhs),
-        ]);
+        if(is_numeric($idhs))
+        {
+            $this->view("NQL", [
+                "HS"=>"read",
+                "readhs" => $this->HSModel->ReadHS($idhs),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function update($idhs){
 
         //View
-        $idhs=preg_quote($idhs);
+        //$idhs=preg_quote($idhs);
 
-        $this->view("NQL", [
-            "HS"=>"update",
-            "updatehs" => $this->HSModel->ReadHS($idhs),
-            "lop" => $this->LOPModel->LOP(),
-        ]);
+        if(is_numeric($idhs))
+        {
+            $this->view("NQL", [
+                "HS"=>"update",
+                "updatehs" => $this->HSModel->ReadHS($idhs),
+                "lop" => $this->LOPModel->LOP(),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function UpdateHS(){
@@ -78,12 +106,21 @@ class QLHS extends Controller{
     public function delete($idhs){
 
         //View
-        $idhs=preg_quote($idhs);
+        //$idhs=preg_quote($idhs);
 
-        $this->view("NQL", [
-            "HS"=>"delete",
-            "tths" => $this->HSModel->TTHS($idhs),
-        ]);
+        if(is_numeric($idhs))
+        {
+            $this->view("NQL", [
+                "HS"=>"delete",
+                "tths" => $this->HSModel->TTHS($idhs),
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     public function DeleteHS(){

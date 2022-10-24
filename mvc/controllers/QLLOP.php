@@ -70,7 +70,7 @@ class QLLOP extends Controller{
 
     public function update($idlop){
 
-        $idgv=preg_quote($idlop);
+        $idlop=preg_quote($idlop);
 
         $row = $this->LOPModel->READLOP($idlop);
         if($row != "loi")
@@ -131,6 +131,8 @@ class QLLOP extends Controller{
     }
 
     public function delete($idlop){
+
+        $idlop=preg_quote($idlop);
 
         $row = $this->LOPModel->READLOP($idlop);
         if($row != "loi")

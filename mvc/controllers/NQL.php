@@ -20,18 +20,27 @@ class NQL extends Controller{
 
     function GV($idmon){
 
-        $idmon=preg_quote($idmon);
+        //$idmon=preg_quote($idmon);
 
-        $this->MHModel = $this->model("MHModel");
-        $ttmon=$this->MHModel->readmh($idmon);
+        if(is_numeric($idmon))
+        {
+            $this->MHModel = $this->model("MHModel");
+            $ttmon=$this->MHModel->readmh($idmon);
 
-        //View
+            //View
 
-        $this->view("NQL", [
-            "Page"=>"TABLEGV",
-            "ttmon"=>$ttmon,
+            $this->view("NQL", [
+                "Page"=>"TABLEGV",
+                "ttmon"=>$ttmon,
 
-        ]);
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     function CQ(){
@@ -67,14 +76,23 @@ class NQL extends Controller{
     function HS($idlop){
 
         //model
-        $idlop=preg_quote($idlop);
+        //$idlop=preg_quote($idlop);
 
-        $this->LOPModel = $this->model("LOPModel");
-        $kq= $this->LOPModel->TTLOP($idlop);
+        if(is_numeric($idlop))
+        {
+            $this->LOPModel = $this->model("LOPModel");
+            $kq= $this->LOPModel->TTLOP($idlop);
             $this->view("NQL", [
                 "Page"=>"TABLEHS",
                 "ttlop" => $kq,
-        ]);
+            ]);
+        }
+        else
+        {
+            header("location: http://localhost/quanly/Home/Login");
+        }
+
+        
     }
 
     function PC(){
