@@ -21,7 +21,7 @@
         </div>
         <div class="m-5">
             <label>Nhập mật khẩu:</label>         
-            <input type="password" class="form-control" id ="password" name="password" placeholder="Enter password" required>
+            <input type="text" class="form-control" id ="password" name="password" placeholder="Enter password" required>
         </div>
         <div class="m-5">
         <input type="hidden" name="idnql" value="<?php echo $_SESSION["ttnql"]["IDNQL"];?>">

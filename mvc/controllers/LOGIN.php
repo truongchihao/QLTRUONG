@@ -19,7 +19,7 @@ class LOGIN extends Controller{
             
             $TK = $_POST["username"];
             $MK = $_POST["password"];
-            $MK = md5($MK);
+            $MK = hash('sha512', $MK);
         
         // 2. kiem tra database co tai khoan mat khau khong
 
@@ -31,6 +31,11 @@ class LOGIN extends Controller{
                 "Page"=>"FormLogin",
                 "data"=>$kq,
             ]);
+            // echo $TK;
+            // echo $MK;
+            // $this->view("test", [
+            //     "Page"=>"rong",
+            // ]);
         }
 
         if($kq!='khongco'){

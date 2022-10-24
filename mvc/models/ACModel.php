@@ -13,6 +13,7 @@ class ACModel extends DB{
     
     public function InsertAC($optradio, $maso, $soluong, $password){
 
+        $password = hash('sha512', $password);;
         //lay gia tri IDAC cua bang ACOUNT
 
         $sql = "SELECT * FROM ACCOUNT";
@@ -53,7 +54,6 @@ class ACModel extends DB{
                 $idac--;
             }else{
 
-                $password = md5($password);
                 //chen du lieu vao bang ACCOUNT  
                 $sql = "INSERT INTO ACCOUNT (IDAC, TK, MK)
                         VALUES('$idtk', '$optradio$ma', '$password') ";
