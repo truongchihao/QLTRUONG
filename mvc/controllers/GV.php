@@ -19,6 +19,7 @@ class GV extends Controller{
     function LOP($idgv){
 
         //View
+        $idgv=preg_quote($idgv);
 
         $this->view("GV", [
             "Page"=>"TABLEGVLOP",
@@ -29,6 +30,9 @@ class GV extends Controller{
     function LOPDAY($idgv, $idlop){
 
         //View
+        $idgv=preg_quote($idgv);
+        $idlop=preg_quote($idlop);
+        
         $result = $this->PCModel->LOPDAY($idgv, $idlop);
         $row = mysqli_fetch_array($result);
 

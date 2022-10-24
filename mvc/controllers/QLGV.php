@@ -10,6 +10,8 @@ class QLGV extends Controller{
 
     public function fetchgv($idmon){
 
+        $idmon=preg_quote($idmon);
+
         $result = $this->GVModel->GVIDMON($idmon);
         $rowcount=mysqli_num_rows($result);
 
@@ -25,6 +27,7 @@ class QLGV extends Controller{
     public function read($idgv){
 
         //View
+        $idgv=preg_quote($idgv);
 
         $this->view("NQL", [
             "GV"=>"read",
@@ -35,6 +38,7 @@ class QLGV extends Controller{
     public function update($idgv){
 
         //View
+        $idgv=preg_quote($idgv);
 
         $this->view("NQL", [
             "GV"=>"update",
@@ -76,6 +80,7 @@ class QLGV extends Controller{
     public function delete($idgv){
 
         //View
+        $idgv=preg_quote($idgv);
 
         $this->view("NQL", [
             "GV"=>"delete",

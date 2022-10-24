@@ -10,6 +10,7 @@ class QLHS extends Controller{
 
     public function fetchhs($idlop){
 
+        $idlop=preg_quote($idlop);
         $result = $this->HSModel->read($idlop);
         $rowcount=mysqli_num_rows($result);
 
@@ -25,6 +26,7 @@ class QLHS extends Controller{
     public function read($idhs){
 
         //View
+        $idhs=preg_quote($idhs);
 
         $this->view("NQL", [
             "HS"=>"read",
@@ -35,6 +37,7 @@ class QLHS extends Controller{
     public function update($idhs){
 
         //View
+        $idhs=preg_quote($idhs);
 
         $this->view("NQL", [
             "HS"=>"update",
@@ -75,6 +78,7 @@ class QLHS extends Controller{
     public function delete($idhs){
 
         //View
+        $idhs=preg_quote($idhs);
 
         $this->view("NQL", [
             "HS"=>"delete",

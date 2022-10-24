@@ -20,6 +20,8 @@ class NQL extends Controller{
 
     function GV($idmon){
 
+        $idmon=preg_quote($idmon);
+
         $this->MHModel = $this->model("MHModel");
         $ttmon=$this->MHModel->readmh($idmon);
 
@@ -65,6 +67,7 @@ class NQL extends Controller{
     function HS($idlop){
 
         //model
+        $idlop=preg_quote($idlop);
 
         $this->LOPModel = $this->model("LOPModel");
         $kq= $this->LOPModel->TTLOP($idlop);

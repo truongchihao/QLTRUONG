@@ -60,6 +60,7 @@ class QLLOP extends Controller{
     public function read($idgv){
 
         //View
+        $idgv=preg_quote($idgv);
 
         $this->view("GV", [
             "GV"=>"read",
@@ -68,6 +69,8 @@ class QLLOP extends Controller{
     }
 
     public function update($idlop){
+
+        $idgv=preg_quote($idlop);
 
         $row = $this->LOPModel->READLOP($idlop);
         if($row != "loi")
