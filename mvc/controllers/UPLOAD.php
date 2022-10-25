@@ -84,20 +84,21 @@ class UPLOAD extends Controller{
                             'js'
                             );
 
-			
-            // if (!in_array($name, $hack))
-            // {
-			// 	echo 
-			// 	'<script>
-			// 		window.alert("Không cho hack");
-			// 	</script>';
-			// 	$this->view("GV", [
-			// 		"TAILIEU"=>"upload",
-			// 		"data"=>$idlop,
-			// 	]);
-            //     $checkhack = 0;
-  			// 	$uploadOk = 0;
-			// }
+			for($i=0; $i<count($hack); $i++)
+			{
+				if (strpos($name, $hack[$i]) !== false) {
+					echo 
+						'<script>
+							window.alert("Không cho hack");
+						</script>';
+						$this->view("GV", [
+							"TAILIEU"=>"upload",
+							"data"=>$idlop,
+						]);
+                		$checkhack = 0;
+  						$uploadOk = 0;
+				}
+			}
 			
 			if(file_exists($folder.'/'.$name))
   			{
