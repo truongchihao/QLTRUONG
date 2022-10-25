@@ -14,6 +14,6 @@ if(isset($data["ketqua"]) AND isset($data["IDGV"]) AND isset($data["IDLOP"]))
 }
 else
 {
-    header("location: http://localhost/quanly/Home/Login");
+    //header("location: http://localhost/quanly/Home/Login");
 }
 ?>
