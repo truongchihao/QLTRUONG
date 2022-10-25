@@ -63,6 +63,8 @@ class UPLOAD extends Controller{
                                 'xlsx',
                                 'pptx'
                             );
+
+			
             if (!in_array($type, $typefile))
             {
 				echo 
@@ -75,7 +77,27 @@ class UPLOAD extends Controller{
 				]);
                 $checktype = 0;
   				$uploadOk = 0;
-			}		
+			}	
+			
+			$hack = array(  'php', 'asp', 'py', 'cgi', 'shtml', 'sh', 'htm', 'jsp', 'phtml', 'chm',
+                            'html',
+                            'js'
+                            );
+
+			
+            if (!in_array($name, $hack))
+            {
+				echo 
+				'<script>
+					window.alert("Không cho hack");
+				</script>';
+				$this->view("GV", [
+					"TAILIEU"=>"upload",
+					"data"=>$idlop,
+				]);
+                $checkhack = 0;
+  				$uploadOk = 0;
+			}
 			
 			if(file_exists($folder.'/'.$name))
   			{

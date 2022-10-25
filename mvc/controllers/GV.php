@@ -71,6 +71,8 @@ class GV extends Controller{
         if(is_numeric($idgv) AND is_numeric($idlop))
         {
         //View]
+        $file = strip_tags($file);
+        $file=preg_quote($file, '/');
             $folder = "../quanly/mvc/models/TAILIEU/";
             $result = $this->TLModel->xoafile($idgv, $idlop, $file);
 
