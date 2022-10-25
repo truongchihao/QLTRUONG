@@ -42,7 +42,15 @@ class UPLOAD extends Controller{
 			
 			// Check file size
 			if ($size > 10000000) {
-  				echo '<p id="loi">Kích thước file vượt quá 10mb</p></br>';
+
+				echo 
+				'<script>
+					window.alert("Kích thước file vượt quá 10mb");
+				</script>';
+				$this->view("GV", [
+					"TAILIEU"=>"upload",
+					"data"=>$idlop,
+				]);
                 $checksize = 0;
   				$uploadOk = 0;
 			}
@@ -57,7 +65,14 @@ class UPLOAD extends Controller{
                             );
             if (!in_array($type, $typefile))
             {
-  				echo '<p id="loi">Chưa đúng định dạng</p></br>';
+				echo 
+				'<script>
+					window.alert("Chưa đúng định dạng");
+				</script>';
+				$this->view("GV", [
+					"TAILIEU"=>"upload",
+					"data"=>$idlop,
+				]);
                 $checktype = 0;
   				$uploadOk = 0;
 			}		
@@ -77,14 +92,27 @@ class UPLOAD extends Controller{
                         {
 						if($this->uploadfile($tmp_name, $folder, $name) == 1)
 						{
-							echo '<p>Upload thành công</p></br>';
-                            $thoigian = date("Y-m-d");
-                            echo $thoigian;
-                            $this->TLModel->InsertTL($ten, $thoigian, $name, $idgv, $idlop);
+							$thoigian = date("Y-m-d");
+                    		$this->TLModel->InsertTL($ten, $thoigian, $name, $idgv, $idlop);
+							echo 
+        					'<script>
+        						window.alert("Upload thành công");
+        					</script>';
+							$this->view("GV", [
+								"TAILIEU"=>"upload",
+								"data"=>$idlop,
+							]);
 						}
 						else
 						{
-							echo '<p id="loi">Upload thất bại</p></br>';
+							echo 
+        					'<script>
+        						window.alert("Upload thất bại");
+        					</script>';
+							$this->view("GV", [
+								"TAILIEU"=>"upload",
+								"data"=>$idlop,
+							]);
 						}
 						break;
                         }
@@ -97,14 +125,27 @@ class UPLOAD extends Controller{
                 {
 				if($this->uploadfile($tmp_name, $folder, $name) == 1)
 				{					
-					echo '<p>Upload thành công</p></br>';
                     $thoigian = date("Y-m-d");
-                    echo $thoigian;
                     $this->TLModel->InsertTL($ten, $thoigian, $name, $idgv, $idlop);
+					echo 
+        			'<script>
+        				window.alert("Upload thành công");
+        			</script>';
+					$this->view("GV", [
+						"TAILIEU"=>"upload",
+						"data"=>$idlop,
+					]);
 				}
 				else
 				{
-					echo '<p id="loi">Upload thất bại</p></br>';
+					echo 
+        			'<script>
+        				window.alert("Upload thất bại");
+        			</script>';
+					$this->view("GV", [
+						"TAILIEU"=>"upload",
+						"data"=>$idlop,
+					]);
 				}
                 }
 			}

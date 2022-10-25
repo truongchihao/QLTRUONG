@@ -37,5 +37,13 @@ class PCModel extends DB{
               return mysqli_query($this->con, $sql);
        }
 
+       function dslophoc($idhs){
+              $sql = "SELECT *
+              FROM lop as l, phan_cong as pc, hoc_sinh as hs, mon_hoc as mh, giao_vien as gv
+              WHERE l.IDLOP = pc.IDLOP AND l.IDLOP = hs.IDlop and pc.IDGV = gv.IDGV and gv.IDMON =mh.IDMON and hs.IDHS ='$idhs'";
+              
+              return mysqli_query($this->con, $sql);
+       }
+
 }
 ?>

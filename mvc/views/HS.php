@@ -15,6 +15,33 @@ if(empty($_SESSION["tths"])){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="/quanly/public/css/GD.css">
+  <link href="/live/public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/live/public/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/live/public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/live/public/js/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        .box
+            {
+            width:1500px;
+            padding:20px;
+            background-color:#fff;
+            border:1px solid #ccc;
+            border-radius:5px;
+            margin-top:25px;
+            }
+
+        select.input-sm 
+            {
+            height: 40px;
+            line-height: 30px;
+            }
+    </style>
 </head>
 <body translate="no">
   <input type="checkbox" id="menu">
@@ -27,7 +54,13 @@ if(empty($_SESSION["tths"])){
 <nav class="nav">
 	<ul>
 		<li><a href="http://localhost/quanly/HS/Home">Home</a></li>
-		<li><a href="#">Tải tài liệu</a></li>
+		<li>
+        <?php 
+            if(isset($_SESSION["tths"])){
+                echo '<a href="http://localhost/quanly/HS/MON/'.$_SESSION["tths"]["IDHS"].'">Tải tài liệu</a>';
+            }
+        ?>
+        </li>
 		<li><a href="http://localhost/quanly/Home/Login">Đăng xuất</a></li>
 	</ul>
 </nav>

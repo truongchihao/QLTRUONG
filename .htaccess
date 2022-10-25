@@ -3,3 +3,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^(.+)$ index.php?url=$1
+
+# Protections  diverses (XSS, clickjacking and MIME-Type sniffing)
+<ifModule mod_headers.c>
+Header set X-XSS-Protection  "1; mode=block"
+Header always append X-Frame-Options SAMEORIGIN
+Header set X-Content-Type-Options: "nosniff”
+</ifModule>

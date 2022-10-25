@@ -38,5 +38,27 @@ class TLModel extends DB{
               return mysqli_query($this->con, $sql);
        }
 
+       function readtl($idgv, $idlop){
+              $sql = "SELECT * FROM tai_lieu WHERE IDGV ='$idgv' and IDLOP ='$idlop' and LOAI = 'TL'";
+              
+              return mysqli_query($this->con, $sql);
+       }
+
+       function readbt($idgv, $idlop){
+              $sql = "SELECT * FROM tai_lieu WHERE IDGV ='$idgv' and IDLOP ='$idlop' and LOAI = 'BT'";
+              
+              return mysqli_query($this->con, $sql);
+       }
+
+       public function xoafile($idgv, $idlop, $file){
+              $sql = "DELETE FROM tai_lieu WHERE IDGV ='$idgv' and IDLOP ='$idlop' and NAME_FILE = '$file'";
+      
+              $result = false;
+              if( mysqli_query($this->con, $sql)) {
+                  $result = true;
+              }
+              return json_encode($result);
+          }
+
 }
 ?>

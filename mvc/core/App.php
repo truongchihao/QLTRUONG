@@ -3,11 +3,11 @@ class App{
     //http://localhost/quanly/Home/SayHi/1/2/3
 
     protected $controller="Home";
-    protected $action="SayHi";
+    protected $action="Login";
     protected $params=[];
 
     function __construct(){
-        //Array ( [0] => Home [1] => SayHi [2] => 1 [3] => 2 [4] => 3 )
+        //Array ( [0] => Home [1] => Login [2] => 1 [3] => 2 [4] => 3 )
         $arr = $this->UrlProcess();
         
         // xu li controller

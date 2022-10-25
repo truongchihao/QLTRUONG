@@ -7,8 +7,8 @@
         <div class="m-5"> 
           <p>Loại tài liệu:</p>       
           <div class="radio">
-            <label class="radio-inline"><input type="radio" name="optradio" id="radio" value="Tài liệu" checked> Tài liệu</label>
-            <label class="radio-inline"><input type="radio" name="optradio" id="radio" value="GV"> Bài tập</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="radio" value="TL" checked> Tài liệu</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="radio" value="BT"> Bài tập</label>
           </div>
         </div>
         <div class="m-5">
